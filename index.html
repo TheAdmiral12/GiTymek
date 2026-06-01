@@ -12,8 +12,10 @@
       <span class="logo">GiTymek</span>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/InfoTCube" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </nav>
   </header>
@@ -30,22 +32,49 @@
       <p>I'm a developer passionate about clean code, good UX, and solving real problems. This is my corner of the internet.</p>
     </section>
 
+    <section id="skills" class="fade-in">
+      <h2>Skills</h2>
+      <div class="tags-group">
+        <span class="tag-label">Languages</span>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">C#</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="tags-group">
+        <span class="tag-label">Frameworks &amp; Tools</span>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">.NET</span>
+          <span class="tag">Git</span>
+          <span class="tag">Docker</span>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <h2>Projects</h2>
       <div class="cards">
         <div class="card">
           <h3>Project One</h3>
           <p>A short description of what this project does and why it's interesting.</p>
+          <div class="card-tags"><span class="tag">React</span><span class="tag">TypeScript</span></div>
           <a href="#">View &rarr;</a>
         </div>
         <div class="card">
           <h3>Project Two</h3>
           <p>A short description of what this project does and why it's interesting.</p>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Docker</span></div>
           <a href="#">View &rarr;</a>
         </div>
         <div class="card">
           <h3>Project Three</h3>
           <p>A short description of what this project does and why it's interesting.</p>
+          <div class="card-tags"><span class="tag">Node.js</span><span class="tag">SQL</span></div>
           <a href="#">View &rarr;</a>
         </div>
       </div>
@@ -59,7 +88,21 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Tymoteusz Marzec</p>
+    <div class="footer-inner">
+      <p>&copy; 2026 Tymoteusz Marzec</p>
+      <div class="social-links">
+        <a href="https://github.com/InfoTCube" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:tymoteusz.marzec.dev@gmail.com">Email</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('section:not(.hero)').forEach(el => { el.classList.add('fade-in'); observer.observe(el); });
+  </script>
 </body>
 </html>
